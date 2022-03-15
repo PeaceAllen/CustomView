@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <com.fjz.custom.view.views.WaveProgressView
+        android:id="@+id/waveProgressView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:blurRadius="@dimen/wave_progress_blur_radius"
+        app:circleColor="@color/wave_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxProgress="1800"
+        app:progressBgColor="@color/progress_bg_color"
+        app:radius="@dimen/wave_progress_radius"
+        app:textColor="#fff"
+        app:textSize="@dimen/wave_progress_text_size"
+        app:waveColor="@color/wave_color" />
+
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Reset Progress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/waveProgressView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
