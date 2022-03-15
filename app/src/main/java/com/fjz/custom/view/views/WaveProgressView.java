@@ -31,17 +31,21 @@ import com.fjz.custom.view.R;
  * 水波纹进度条
  */
 public class WaveProgressView extends View {
+
+    private final int MAX_WAVE_H = 30;
+    private final int BLUR_RADIUS = 15;
+
     private float progress;
-    private float maxProgress;
-    private int radius;
-    private int circleColor;
-    private int progressBgColor;
-    private int waveColor;
-    private int textColor;
-    private int textSize;
-    private Paint roundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Paint wavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final float maxProgress;
+    private final int radius;
+    private final int circleColor;
+    private final int progressBgColor;
+    private final int waveColor;
+    private final int textColor;
+    private final int textSize;
+    private final Paint roundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint wavePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private final Paint textPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     int width, height;
     float centerX, centerY;
@@ -76,7 +80,7 @@ public class WaveProgressView extends View {
         maxProgress = typedArray.getFloat(R.styleable.WaveProgressView_maxProgress, 100);
 
         radius = typedArray.getDimensionPixelSize(R.styleable.WaveProgressView_radius, 100);
-        blurRadius = typedArray.getDimensionPixelSize(R.styleable.WaveProgressView_blurRadius, 15);
+        blurRadius = typedArray.getDimensionPixelSize(R.styleable.WaveProgressView_blurRadius, BLUR_RADIUS);
         circleColor = typedArray.getColor(R.styleable.WaveProgressView_circleColor, Color.BLACK);
         progressBgColor = typedArray.getColor(R.styleable.WaveProgressView_progressBgColor, Color.WHITE);
         waveColor = typedArray.getColor(R.styleable.WaveProgressView_waveColor, Color.BLUE);
@@ -147,7 +151,7 @@ public class WaveProgressView extends View {
         linearGradient = new LinearGradient(0, height, 0, -height, new int[]{waveColor, Color.TRANSPARENT}, null, Shader.TileMode.CLAMP);
     }
 
-    private final int MAX_WAVE_H = 30;
+
     private void drawWave(Canvas canvas) {
         float ratio = 1 - progress / maxProgress;
 

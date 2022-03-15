@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!-- 圆形水波纹进度条属性定义-->
     <declare-styleable name="WaveProgressView">
         <attr name="progress" format="float" />
         <attr name="maxProgress" format="float" />
@@ -10,6 +12,11 @@
         <attr name="progressBgColor" format="color"/>
         <attr name="textColor" format="color"/>
         <attr name="textSize" format="dimension"/>
+        <attr name="circleRadius" format="dimension" />
+        <attr name="ringRadius" format="dimension" />
+        <attr name="ringWidth" format="dimension" />
+        <attr name="ringColor" format="color" />
     </declare-styleable>
+
 
 </resources>

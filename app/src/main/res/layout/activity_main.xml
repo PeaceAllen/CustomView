@@ -35,4 +35,18 @@
         app:layout_constraintTop_toBottomOf="@id/waveProgressView" />
 
 
+    <com.fjz.custom.view.views.CircleProgressView
+        android:id="@+id/circleProgressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:circleRadius="30dp"
+        app:ringWidth="5dp"
+        app:textColor="#f00"
+        app:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnReset"
+        android:layout_marginTop="20dp"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

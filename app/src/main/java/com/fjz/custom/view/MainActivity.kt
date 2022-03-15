@@ -3,6 +3,7 @@ package com.fjz.custom.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.fjz.custom.view.views.CircleProgressView
 import com.fjz.custom.view.views.WaveProgressView
 
 class MainActivity : AppCompatActivity() {
@@ -17,10 +18,13 @@ class MainActivity : AppCompatActivity() {
 
 
         val btn = findViewById<Button>(R.id.btnReset)
+        val circleProgress = findViewById<CircleProgressView>(R.id.circleProgressView)
 
         btn.setOnClickListener {
             waveProgressView.setProgress(900f)
+            circleProgress.updateProgress(circleProgress.progress + 2)
         }
+
     }
 
 }
