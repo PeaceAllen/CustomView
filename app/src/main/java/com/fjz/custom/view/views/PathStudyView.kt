@@ -3,9 +3,7 @@ package com.fjz.custom.view.views
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
-import android.view.MotionEvent
 import android.view.View
-
 
 /**
  * Created by Jinzhen Feng on 2022/3/15.
