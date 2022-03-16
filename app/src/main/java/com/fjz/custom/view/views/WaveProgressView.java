@@ -24,7 +24,7 @@ import com.fjz.custom.view.R;
 
 /**
  * Created by Jinzhen Feng on 2022/3/15.
- * Copyright (c) 2022 Podbean. All rights reserved.
+ * Copyright (c) 2022 Feng. All rights reserved.
  */
 
 /**
