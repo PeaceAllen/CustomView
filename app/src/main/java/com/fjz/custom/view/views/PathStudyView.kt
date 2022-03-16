@@ -16,7 +16,7 @@ class PathStudyView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
 
     // 水波移动的速度
-    private var mSpeed = 5f
+    private var mSpeed = 10f
     // 水波的波长
     private var waveWidth: Float = 400f
     // 水波的振幅/2
@@ -24,9 +24,10 @@ class PathStudyView @JvmOverloads constructor(
     // 水波移动的起点
     private var mOffset = -waveWidth
 
+    private var mBgColor: Int = Color.BLUE
     private val mBgPaint by lazy {
         Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = Color.BLUE
+            color = mBgColor
             style = Paint.Style.FILL_AND_STROKE
         }
     }
@@ -36,6 +37,7 @@ class PathStudyView @JvmOverloads constructor(
             color = Color.RED
             style = Paint.Style.FILL
             strokeWidth = 5f
+            xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
         }
     }
 
@@ -59,9 +61,12 @@ class PathStudyView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
-        canvas?.drawRect(0f, 0f, measuredWidth-1f, measuredHeight-1f, mBgPaint)
-        // drawLine(canvas)
+        canvas?.drawColor(Color.TRANSPARENT)
+
+        canvas?.drawCircle(width/2f, height/2f, width/2f, mBgPaint)
+
         drawPath(canvas)
+
 
         mOffset += mSpeed
         if (mOffset >= 0) {
